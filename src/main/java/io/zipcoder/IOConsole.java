@@ -9,7 +9,7 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class IOConsole {
+class IOConsole {
     private final Scanner scanner;
     private final PrintStream out;
 

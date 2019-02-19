@@ -3,17 +3,22 @@ package io.zipcoder;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.After;
 import org.junit.Test;
 
 public class ApplicationTest {
     private ByteArrayOutputStream byteArrOutStream = new ByteArrayOutputStream();
 
     @Before
-    public void changeOutput(){
+    public void changeOutputStream(){
         System.setOut(new PrintStream(byteArrOutStream));
+    }
+
+    @After
+    public void resetOutputStreamToSystemOut() {
+        System.setOut(System.out);
     }
 
     @Test
@@ -59,6 +64,4 @@ public class ApplicationTest {
         // Then
         Assert.assertEquals(expectedOutput, actualOutput);
     }
-
-
 }
