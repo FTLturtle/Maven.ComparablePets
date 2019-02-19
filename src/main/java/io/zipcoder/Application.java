@@ -24,6 +24,7 @@ public class Application {
         int numPets = ioConsole.getIntegerInput("How many pets do you have?");
 
         fillPetArrayList(numPets, petArrayList);
+
         return petArrayList;
     }
 
@@ -47,6 +48,7 @@ public class Application {
                 case "mouse":
                     newPet = new Mouse(name);
             }
+
             petArrayList.add(newPet);
         }
 
