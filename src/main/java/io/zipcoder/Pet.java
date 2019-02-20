@@ -1,13 +1,13 @@
 package io.zipcoder;
 
-public abstract class Pet implements Comparable<Pet>{
+public abstract class Pet implements Comparable<Pet> {
     private String name;
 
     public Pet(String name) {
         this.name = name;
     }
 
-    public String speak(){
+    public String speak() {
         return "";
     }
 
@@ -25,6 +25,7 @@ public abstract class Pet implements Comparable<Pet>{
 //            result = compareTypes(this, o);
 //        } else {
 //            result = this.name.compareTo(o.name);
+//        }
 //        return result;
 //    }
 
@@ -37,25 +38,25 @@ public abstract class Pet implements Comparable<Pet>{
         return result;
     }
 
-    private int compareTypes(Pet firstPet, Pet secondPet) {
-        int result = 0;
+        private int compareTypes (Pet firstPet, Pet secondPet){
+            int result = 0;
 
-        if (firstPet instanceof Dog) {
-            if (!(secondPet instanceof Dog)) {
-                result = -1;
+            if (firstPet instanceof Dog) {
+                if (!(secondPet instanceof Dog)) {
+                    result = -1;
+                }
+            } else if (firstPet instanceof Cat) {
+                if (secondPet instanceof Dog) {
+                    result = 1;
+                } else if (secondPet instanceof Mouse) {
+                    result = -1;
+                }
+            } else if (firstPet instanceof Mouse) {
+                if (!(secondPet instanceof Mouse)) {
+                    result = 1;
+                }
             }
-        } else if (firstPet instanceof Cat) {
-            if (secondPet instanceof Dog) {
-                result = 1;
-            } else if (secondPet instanceof Mouse) {
-                result = -1;
-            }
-        } else if (firstPet instanceof Mouse) {
-            if (!(secondPet instanceof Mouse)) {
-                result = 1;
-            }
+
+            return result;
         }
-
-        return result;
     }
-}

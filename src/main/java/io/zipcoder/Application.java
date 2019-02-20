@@ -34,7 +34,7 @@ public class Application {
             String name = ioConsole.getStringInput("What is pet %d's name?", i);
             String petType = ioConsole.getStringInput("Is %s a 'dog', 'cat', or 'mouse'?", name).toLowerCase();
 
-            while (!petType.equals("dog") && !petType.equals("cat") && !petType.equals("mouse")) {
+            while (!(petType.equals("dog") || petType.equals("cat") || petType.equals("mouse"))) {
                 petType = ioConsole.getStringInput("Error: Please enter 'dog', 'cat', or 'mouse'.").toLowerCase();
             }
 

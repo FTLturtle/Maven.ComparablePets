@@ -53,7 +53,7 @@ public class ApplicationTest {
         Pet pet2 = new Dog(name2);
         Pet pet3 = new Dog(name3);
 
-        String expectedOutput = String.format("%s: Bark!\n%s: Meow!\n%s: Squeak!\n", name3, name2, name1);
+        String expectedOutput = String.format("%s: Bark!\n%s: Bark!\n%s: Bark!\n", name3, name2, name1);
 
         // When
         Application testApplication = new Application(pet1, pet2, pet3);
