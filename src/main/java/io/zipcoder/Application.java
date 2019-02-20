@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Application {
+class Application {
     private ArrayList<Pet> pets;
-    IOConsole ioConsole = new IOConsole();
+    private IOConsole ioConsole = new IOConsole();
 
-    public Application() {
+    private Application() {
         this.pets = askForPets();
     }
 
-    public Application(Pet... pets){
+    Application(Pet... pets){
         ArrayList<Pet> petArrayList = new ArrayList<Pet>(Arrays.asList(pets));
-        Collections.sort(petArrayList);
+        Collections.sort(petArrayList, new PetComparator());
         this.pets = petArrayList;
     }
 
@@ -53,7 +53,7 @@ public class Application {
             petArrayList.add(newPet);
         }
 
-        Collections.sort(petArrayList);
+        Collections.sort(petArrayList, new PetComparator());
     }
 
     void listPets() {
@@ -62,7 +62,7 @@ public class Application {
         }
     }
 
-    public static void start() {
+    static void start() {
         Application application = new Application();
         application.listPets();
     }

@@ -19,44 +19,36 @@ public abstract class Pet implements Comparable<Pet> {
         this.name = name;
     }
 
-//    public int compareTo(Pet o) {
-//        int result;
-//        if (this.name.compareTo(o.name) == 0) {
-//            result = compareTypes(this, o);
-//        } else {
-//            result = this.name.compareTo(o.name);
-//        }
-//        return result;
-//    }
-
     public int compareTo(Pet otherPet) {
-        int result = compareTypes(this, otherPet);
-
-        if (result == 0) {
+        int result;
+        if (this.name.compareTo(otherPet.name) == 0) {
+            result = compareTypes(this, otherPet);
+        } else {
             result = this.name.compareTo(otherPet.name);
         }
         return result;
     }
 
-        private int compareTypes (Pet firstPet, Pet secondPet){
-            int result = 0;
+    @SuppressWarnings("Duplicates")
+    private int compareTypes(Pet thisPet, Pet otherPet) {
+        int result = 0;
 
-            if (firstPet instanceof Dog) {
-                if (!(secondPet instanceof Dog)) {
-                    result = -1;
-                }
-            } else if (firstPet instanceof Cat) {
-                if (secondPet instanceof Dog) {
-                    result = 1;
-                } else if (secondPet instanceof Mouse) {
-                    result = -1;
-                }
-            } else if (firstPet instanceof Mouse) {
-                if (!(secondPet instanceof Mouse)) {
-                    result = 1;
-                }
+        if (thisPet instanceof Dog) {
+            if (!(otherPet instanceof Dog)) {
+                result = -1;
             }
-
-            return result;
+        } else if (thisPet instanceof Cat) {
+            if (otherPet instanceof Dog) {
+                result = 1;
+            } else if (otherPet instanceof Mouse) {
+                result = -1;
+            }
+        } else if (thisPet instanceof Mouse) {
+            if (!(otherPet instanceof Mouse)) {
+                result = 1;
+            }
         }
+
+        return result;
     }
+}
