@@ -31,7 +31,7 @@ public class ApplicationTest {
         Pet pet2 = new Cat(name2);
         Pet pet3 = new Mouse(name3);
 
-        String expectedOutput = String.format("%s: Meow!\n%s: Bark!\n%s: Squeak!\n", name2, name1, name3);
+        String expectedOutput = String.format("%s: Bark!\n%s: Meow!\n%s: Squeak!\n", name1, name2, name3);
 
         // When
         Application testApplication = new Application(pet1, pet2, pet3);
@@ -46,14 +46,14 @@ public class ApplicationTest {
     @Test
     public void listPetsTest2() {
         // Given
-        String name1 = "Betty";
+        String name1 = "Rick";
         String name2 = "Carter";
-        String name3 = "Rick";
+        String name3 = "Betty";
         Pet pet1 = new Dog(name1);
-        Pet pet2 = new Cat(name2);
-        Pet pet3 = new Mouse(name3);
+        Pet pet2 = new Dog(name2);
+        Pet pet3 = new Dog(name3);
 
-        String expectedOutput = String.format("%s: Bark!\n%s: Meow!\n%s: Squeak!\n", name1, name2, name3);
+        String expectedOutput = String.format("%s: Bark!\n%s: Meow!\n%s: Squeak!\n", name3, name2, name1);
 
         // When
         Application testApplication = new Application(pet1, pet2, pet3);

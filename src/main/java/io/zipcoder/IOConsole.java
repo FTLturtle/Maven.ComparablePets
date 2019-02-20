@@ -7,6 +7,7 @@ package io.zipcoder;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class IOConsole {
@@ -57,7 +58,7 @@ class IOConsole {
      * @param args   : optional arguments to send for string formatting
      * @return user's input as integer
      */
-    public Integer getIntegerInput(String prompt, Object... args) {
+    public Integer getIntegerInput(String prompt, Object... args) throws InputMismatchException {
         println(prompt, args);
         int result = scanner.nextInt();
         scanner.nextLine();
@@ -72,7 +73,7 @@ class IOConsole {
      * @param args   : optional arguments to send for string formatting
      * @return user's input as double
      */
-    public Double getDoubleInput(String prompt, Object... args) {
+    public Double getDoubleInput(String prompt, Object... args) throws InputMismatchException{
         println(prompt, args);
         double result = scanner.nextDouble();
         scanner.nextLine();
@@ -87,7 +88,7 @@ class IOConsole {
      * @param args   : optional arguments to send for string formatting
      * @return user's input as float
      */
-    public Float getFloatInput(String prompt, Object... args) {
+    public Float getFloatInput(String prompt, Object... args) throws InputMismatchException{
         println(prompt, args);
         float result = scanner.nextFloat();
         scanner.nextLine();
@@ -102,7 +103,7 @@ class IOConsole {
      * @param args   : optional arguments to send for string formatting
      * @return user's input as long
      */
-    public Long getLongInput(String prompt, Object... args) {
+    public Long getLongInput(String prompt, Object... args) throws InputMismatchException{
         println(prompt, args);
         long result = scanner.nextLong();
         scanner.nextLine();

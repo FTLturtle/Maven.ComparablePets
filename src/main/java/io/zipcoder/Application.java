@@ -30,6 +30,7 @@ public class Application {
 
     private void fillPetArrayList(int numPets, ArrayList<Pet> petArrayList) {
         for (int i = 1; i <= numPets; i++) {
+
             String name = ioConsole.getStringInput("What is pet %d's name?", i);
             String petType = ioConsole.getStringInput("Is %s a 'dog', 'cat', or 'mouse'?", name).toLowerCase();
 
