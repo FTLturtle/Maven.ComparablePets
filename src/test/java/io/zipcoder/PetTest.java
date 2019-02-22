@@ -22,30 +22,51 @@ public class PetTest {
     }
 
     @Test
-    public void speak() {
+    public void compareToTest() {
+        // Given
+        String name1 = "Spot";
+        String name2 = "Cathy";
+
+        Pet pet1 = new Dog(name1);
+        Pet pet2 = new Cat(name2);
+
+
+
+
+        // When
+
+        //int expected = pet1.name1.compareTo(pet2.name2);
+        int actual = pet1.compareTo(pet2);
+
+
+
+        // Then
+        Assert.assertTrue(actual>0);
     }
 
     @Test
-    public void getName() {
+    public void compareToTest2() {
+        // Given
+        String name1 = "Spot";
+        String name2 = "Spot";
+
+        Pet pet1 = new Dog(name1);
+        Pet pet2 = new Dog(name2);
+
+
+
+
+        // When
+
+        //int expected = pet1.name1.compareTo(pet2.name2);
+        int actual = pet1.compareTo(pet2);
+
+
+
+        // Then
+        Assert.assertEquals(0,actual);
     }
 
-    @Test
-    public void setName() {
-    }
 
-    @Test
-    public void compareTo() {
-    }
 
-    @Test
-    public void dogSpeak() {
-    }
-
-    @Test
-    public void catSpeak() {
-    }
-
-    @Test
-    public void mouseSpeak() {
-    }
 }
